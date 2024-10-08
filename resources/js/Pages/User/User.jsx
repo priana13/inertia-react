@@ -1,6 +1,8 @@
 import { Link, Head } from '@inertiajs/react';
 import { useEffect , useState } from 'react';
 
+import { Input } from 'tw-elements';
+
 export default function User({users}){
 
     // console.log(users)
@@ -8,9 +10,16 @@ export default function User({users}){
     return (
 
         <>
-            <div className="container mx-12 mt-5">
+            <div className="container mx-12 mt-5 flex justify-between">
 
                 <h2 className="text-2xl">Halaman User</h2>
+
+                <Link
+                href="/users/create"
+                class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+                Create
+                </Link>
+
 
             </div>        
 
@@ -26,7 +35,7 @@ export default function User({users}){
                             <th scope="col" className="px-6 py-4">#</th>
                             <th scope="col" className="px-6 py-4">Name</th>
                             <th scope="col" className="px-6 py-4">Email</th>
-                            <th scope="col" className="px-6 py-4">ID</th>
+                            <th scope="col" className="px-6 py-4">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +45,14 @@ export default function User({users}){
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{user.id}</td>
                                     <td className="whitespace-nowrap px-6 py-4">{user.name}</td>
                                     <td className="whitespace-nowrap px-6 py-4">{user.email}</td>
-                                    <td className="whitespace-nowrap px-6 py-4">{user.id}</td>
+                                    <td className="whitespace-nowrap px-6 py-4">
+                                    <Link
+                                        href="/users/create"
+                                        class="inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-danger-3 transition duration-150 ease-in-out hover:bg-danger-accent-300 hover:shadow-danger-2 focus:bg-danger-accent-300 focus:shadow-danger-2 focus:outline-none focus:ring-0 active:bg-danger-600 active:shadow-danger-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+                                        Delete
+                                    </Link>
+
+                                    </td>
                                 </tr>
 
                             </>) )}                        
