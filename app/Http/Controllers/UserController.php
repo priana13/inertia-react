@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $users = User::paginate(5);
 
-        return inertia('User' , compact('users'));
+        return inertia('User/User' , compact('users'));
     }
 
     /**
@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('User/Create');
     }
 
     /**
