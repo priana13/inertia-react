@@ -79,6 +79,6 @@ class UserController extends Controller
     {
        $user->delete();
 
-       return redirect('/users');
+       return redirect('/users')->with('message' , $user->name .  ' Berhasil Dihapus');
     }
 }

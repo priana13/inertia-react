@@ -1,4 +1,4 @@
-import { Link, Head } from '@inertiajs/react';
+import { Link, Head, usePage } from '@inertiajs/react';
 import { useEffect , useState } from 'react';
 
 import { Input } from 'tw-elements';
@@ -8,6 +8,12 @@ import { useForm } from "@inertiajs/react";
 
 export default function User({users}){
 
+    const {flash} = usePage().props;
+
+    const [flashMessage , setFlashMessage]  = useState(flash.message);
+    
+
+    console.log( flashMessage )
 
     return (
 
@@ -16,6 +22,8 @@ export default function User({users}){
 
                 <h2 className="text-2xl">Halaman User</h2>
 
+               
+
                 <Link
                 href="/users/create"
                 className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
@@ -23,7 +31,12 @@ export default function User({users}){
                 </Link>
 
 
-            </div>        
+            </div>    
+
+            {flash.message && (
+
+                <div className="text-danger container mx-12 bg-gray-100 p-2 my-2">{flash.message}</div>
+            )}                 
 
             <div className="flex flex-col mx-12">
                 <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
