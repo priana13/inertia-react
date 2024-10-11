@@ -43,6 +43,11 @@ export default function User({users}){
             {flash.message && (
 
                 <div className="text-danger container mx-12 bg-gray-100 p-2 my-2">{flash.message}</div>
+            )}   
+
+            {flash.success && (
+
+                <div className="text-success container mx-12 bg-gray-100 p-2 my-2">{flash.success}</div>
             )}                 
 
             <div className="flex flex-col mx-12">

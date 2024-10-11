@@ -79,7 +79,7 @@ class UserController extends Controller
        $user->email = $request->email;     
        $user->save();
 
-        return redirect('/users')->with('message' , 'User berhasil di update');
+        return redirect('/users')->with('success' , 'User berhasil di update');
     }
 
     /**
