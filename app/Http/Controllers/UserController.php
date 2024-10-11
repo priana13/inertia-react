@@ -59,17 +59,27 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return inertia('User/Edit' , compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'nama' => 'required', 
+            'email' => 'required',             
+        ]);
+
+     
+       $user->name = $request->nama;
+       $user->email = $request->email;     
+       $user->save();
+
+        return redirect('/users')->with('message' , 'User berhasil di update');
     }
 
     /**

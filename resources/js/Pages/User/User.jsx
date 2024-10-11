@@ -16,7 +16,7 @@ export default function User({users}){
     const [flashMessage , setFlashMessage]  = useState(flash.message);
     
 
-    // console.log( usePage() )
+    console.log( useForm() )
 
     return (
 
@@ -73,7 +73,15 @@ export default function User({users}){
                                         href={'users/' + user.id}
                                         className="inline-block rounded bg-success px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-success-3 transition duration-150 ease-in-out hover:bg-success-accent-300 hover:shadow-success-2 focus:bg-success-accent-300 focus:shadow-success-2 focus:outline-none focus:ring-0 active:bg-success-600 active:shadow-success-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
                                         Show
+                                    </Link>     
+
+                                    <Link
+                                        key={user.id}
+                                        href={'users/' + user.id + '/edit'}
+                                        className="ms-2 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
+                                        Edit
                                     </Link>                                  
+
 
                                     <Link                                          
                                         href={`/users/${user.id}`}
