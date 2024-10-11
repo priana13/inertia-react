@@ -7,13 +7,16 @@ import { useForm } from "@inertiajs/react";
 
 
 export default function User({users}){
+    
 
     const {flash} = usePage().props;
+
+    const {component} = usePage();
 
     const [flashMessage , setFlashMessage]  = useState(flash.message);
     
 
-    console.log( flashMessage )
+    // console.log( usePage() )
 
     return (
 
@@ -22,7 +25,11 @@ export default function User({users}){
 
                 <h2 className="text-2xl">Halaman User</h2>
 
+               <Head title="Halaman User" >  
                
+               <meta head-key="description" name="description" content="This is a page specific description" />
+
+                </Head>                 
 
                 <Link
                 href="/users/create"
